@@ -3,7 +3,8 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import LoadingSplash from '../../../components/LoadingSplash';
+import { useRouter } from 'next/navigation';
+import LoadingSplash from '@/components/LoadingSplash';
 
 interface FallingEmoji {
   id: number;
@@ -16,12 +17,13 @@ interface FallingEmoji {
 
 const Page = () => {
   const [showMessage, setShowMessage] = useState(false);
+  const router = useRouter();
   const [fallingEmojis, setFallingEmojis] = useState<FallingEmoji[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
   const loveEmojis = ['❤️', '💕', '💖', '💘', '💝', '💗', '💓', '💞'];
-  
+
   // Romantic images (you can replace these with your own images)
   const romanticImages = [
     'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&q=80', // Couple holding hands
@@ -40,9 +42,9 @@ const Page = () => {
         duration: 3 + Math.random() * 2,
         size: 20 + Math.random() * 20,
       };
-      
+
       setFallingEmojis((prev) => [...prev, newEmoji]);
-      
+
       // Remove emoji after it falls
       const removeId = setTimeout(() => {
         setFallingEmojis((prev) => prev.filter((e) => e.id !== newEmoji.id));
@@ -53,7 +55,7 @@ const Page = () => {
 
     // Generate emojis at intervals
     const interval = setInterval(generateEmoji, 300);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -62,7 +64,7 @@ const Page = () => {
     const imageInterval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % romanticImages.length);
     }, 5000);
-    
+
     return () => clearInterval(imageInterval);
   }, []);
 
@@ -95,12 +97,12 @@ const Page = () => {
               fontSize: `${emoji.size}px`,
             }}
             initial={{ y: -50, opacity: 0, rotate: 0 }}
-            animate={{ 
-              y: '110vh', 
+            animate={{
+              y: '110vh',
               opacity: [0, 1, 1, 0],
               rotate: 360,
             }}
-            transition={{ 
+            transition={{
               duration: emoji.duration,
               delay: emoji.delay,
               ease: 'linear'
@@ -141,7 +143,7 @@ const Page = () => {
         className="relative z-10 text-center px-4 max-w-4xl w-full"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ 
+        transition={{
           duration: 0.8,
           type: 'spring',
           stiffness: 100
@@ -153,12 +155,12 @@ const Page = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl"
-            animate={{ 
+            animate={{
               scale: [1, 1.05, 1],
             }}
-            transition={{ 
+            transition={{
               duration: 2,
               repeat: Infinity,
               ease: 'easeInOut'
@@ -166,8 +168,8 @@ const Page = () => {
           >
             You Said Yes! 🎉
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-2xl md:text-3xl text-white/90 mb-8 drop-shadow-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -197,21 +199,20 @@ const Page = () => {
                 transition={{ duration: 0.7 }}
               />
             </AnimatePresence>
-            
+
             {/* Image overlay gradient */}
             <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
-            
+
             {/* Image indicators */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
               {romanticImages.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentImageIndex(i)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    i === currentImageIndex 
-                      ? 'bg-white w-8' 
+                  className={`w-2 h-2 rounded-full transition-all ${i === currentImageIndex
+                      ? 'bg-white w-8'
                       : 'bg-white/50 hover:bg-white/75'
-                  }`}
+                    }`}
                 />
               ))}
             </div>
@@ -255,14 +256,14 @@ const Page = () => {
               className="bg-white text-rose-500 font-bold py-5 px-10 rounded-full text-xl shadow-2xl hover:shadow-rose-300 transition-all relative overflow-hidden group"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setShowMessage(true)}
+              onClick={() => router.push('/message')}
             >
               <motion.div
                 className="absolute inset-0 bg-linear-to-r from-rose-400 to-pink-400 opacity-0 group-hover:opacity-20"
-                animate={{ 
+                animate={{
                   x: ['-100%', '100%'],
                 }}
-                transition={{ 
+                transition={{
                   duration: 1.5,
                   repeat: Infinity,
                   ease: 'linear'
@@ -275,10 +276,10 @@ const Page = () => {
           )}
         </motion.div>
 
-        
+
 
         {/* Bottom heart animation */}
-        <motion.div 
+        <motion.div
           className="mt-12 flex justify-center gap-4 text-4xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -287,11 +288,11 @@ const Page = () => {
           {['💑', '🌹', '💐', '🎁', '🍫'].map((emoji, i) => (
             <motion.span
               key={i}
-              animate={{ 
+              animate={{
                 y: [0, -20, 0],
                 rotate: [0, 360, 0]
               }}
-              transition={{ 
+              transition={{
                 duration: 2,
                 delay: i * 0.2,
                 repeat: Infinity,

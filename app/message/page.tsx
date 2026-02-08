@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import LoadingSplash from '../../../components/LoadingSplash';
+import LoadingSplash from '@/components/LoadingSplash';
 
 const Page = () => {
   const router = useRouter();
@@ -206,15 +206,14 @@ const Page = () => {
               {message.paragraphs.map((paragraph, index) => (
                 <motion.p
                   key={index}
-                  className={`text-lg leading-relaxed font-serif ${
-                    index === 0 
-                      ? 'text-rose-700 font-semibold text-xl' 
+                  className={`text-lg leading-relaxed font-serif ${index === 0
+                      ? 'text-rose-700 font-semibold text-xl'
                       : index === message.paragraphs.length - 1
-                      ? 'text-rose-600 font-medium text-right whitespace-pre-line'
-                      : 'text-gray-700'
-                  }`}
+                        ? 'text-rose-600 font-medium text-right whitespace-pre-line'
+                        : 'text-gray-700'
+                    }`}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
+                  animate={{
                     opacity: index <= currentParagraph ? 1 : 0,
                     y: index <= currentParagraph ? 0 : 20
                   }}
