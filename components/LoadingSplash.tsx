@@ -34,7 +34,7 @@ export default function LoadingSplash({
     }, [duration, onFinish]);
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-pink-600 via-purple-600 to-indigo-700 text-white">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-linear-to-br from-pink-600 via-purple-600 to-indigo-700 text-white">
             <div className="max-w-xl w-full px-6 py-10 text-center">
                 <motion.div
                     className="text-6xl mb-6"

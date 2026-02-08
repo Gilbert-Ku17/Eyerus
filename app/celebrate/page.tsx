@@ -210,8 +210,8 @@ const Page = () => {
                   key={i}
                   onClick={() => setCurrentImageIndex(i)}
                   className={`w-2 h-2 rounded-full transition-all ${i === currentImageIndex
-                      ? 'bg-white w-8'
-                      : 'bg-white/50 hover:bg-white/75'
+                    ? 'bg-white w-8'
+                    : 'bg-white/50 hover:bg-white/75'
                     }`}
                 />
               ))}
