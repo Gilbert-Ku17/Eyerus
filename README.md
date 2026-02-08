@@ -191,12 +191,3 @@ Built with love — and a little mischief.
 
 ---
 
-If you want, I can next:
-
-* Add **badges** (Next.js, Vercel, License)
-* Write a **portfolio case-study version**
-* Help you craft the **actual Valentine message text**
-* Polish this for **open-source presentation**
-* Help you choose a **perfect repo name**
-
-Just tell me 💕
