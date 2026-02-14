@@ -12,7 +12,7 @@ type LoadingSplashProps = {
 };
 
 export default function LoadingSplash({
-    duration = 15,
+    duration = 12,
     message = "A SPECIAL GOOD MORNING FOR",
     onFinish,
     allowSkip = true,

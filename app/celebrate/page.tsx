@@ -64,9 +64,9 @@ const Page = () => {
       <div className="absolute inset-0 bg-linear-to-br from-rose-50 via-pink-50 to-red-50">
         <div className="absolute inset-0 bg-linear-to-tr from-pink-100/40 via-transparent to-rose-100/40" />
         <div className="absolute inset-0 bg-linear-to-bl from-transparent via-pink-50/30 to-transparent" />
-        
+
         {/* Subtle noise texture */}
-        <div className="absolute inset-0 opacity-[0.02]" 
+        <div className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`
           }}
@@ -120,8 +120,8 @@ const Page = () => {
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" 
-                fill="url(#sparkleGradient)" 
+              <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"
+                fill="url(#sparkleGradient)"
               />
               <defs>
                 <linearGradient id="sparkleGradient">
@@ -228,7 +228,7 @@ const Page = () => {
             <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-2xl">
               {/* Image container with gradient overlay */}
               <div className="absolute inset-0 bg-linear-to-br from-rose-500/10 to-pink-500/10 z-10" />
-              
+
               <Image
                 src="/vale.png"
                 alt="Valentine celebration"
@@ -236,7 +236,7 @@ const Page = () => {
                 className="object-cover"
                 priority
               />
-              
+
               {/* Floating hearts around image */}
               <div className="absolute inset-0 pointer-events-none">
                 {[
@@ -356,7 +356,7 @@ const Page = () => {
                   </defs>
                 </svg>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Distance may separate us physically, but our love transcends space and time. 
+                  Distance may separate us physically, but our love transcends space and time.
                   This Valentine's Day is just the beginning of our beautiful story together.
                 </p>
               </motion.div>
@@ -374,13 +374,13 @@ const Page = () => {
               >
                 {/* Gradient background */}
                 <div className="absolute inset-0 bg-linear-to-r from-rose-500 via-pink-500 to-red-500" />
-                
+
                 {/* Animated gradient overlay */}
                 <motion.div
                   className="absolute inset-0 bg-linear-to-r from-pink-400 via-rose-400 to-red-400 opacity-0 group-hover:opacity-100"
                   transition={{ duration: 0.3 }}
                 />
-                
+
                 {/* Shimmer effect */}
                 <motion.div
                   className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
@@ -393,7 +393,7 @@ const Page = () => {
                     ease: "linear"
                   }}
                 />
-                
+
                 <span className="relative z-10 flex items-center gap-3">
                   <motion.span
                     animate={{ rotate: [0, 10, -10, 0] }}

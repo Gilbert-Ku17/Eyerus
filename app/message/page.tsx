@@ -77,7 +77,7 @@ const Page = () => {
   if (isLoading) {
     return (
       <LoadingSplash
-        duration={10}
+        duration={5}
         message="Crafting your love letter"
         onFinish={() => setIsLoading(false)}
       />
@@ -91,9 +91,9 @@ const Page = () => {
         <div className="absolute inset-0 bg-linear-to-tr from-pink-100/30 via-transparent to-rose-100/30" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,113,133,0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(236,72,153,0.08),transparent_50%)]" />
-        
+
         {/* Paper texture */}
-        <div className="absolute inset-0 opacity-[0.03]" 
+        <div className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`
           }}
@@ -149,7 +149,7 @@ const Page = () => {
           whileTap={{ scale: 0.95 }}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="group-hover:-translate-x-1 transition-transform">
-            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <span className="font-medium">Back to Celebration</span>
         </motion.button>
@@ -167,19 +167,19 @@ const Page = () => {
           {/* Decorative borders */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-rose-400 to-transparent opacity-60" />
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-pink-400 to-transparent opacity-60" />
-          
+
           {/* Elegant corner flourishes */}
           <svg className="absolute top-0 left-0 w-24 h-24 text-rose-200/40" viewBox="0 0 100 100">
-            <path d="M0,0 Q25,0 25,25 Q25,0 50,0" fill="currentColor"/>
+            <path d="M0,0 Q25,0 25,25 Q25,0 50,0" fill="currentColor" />
           </svg>
           <svg className="absolute top-0 right-0 w-24 h-24 text-pink-200/40 rotate-90" viewBox="0 0 100 100">
-            <path d="M0,0 Q25,0 25,25 Q25,0 50,0" fill="currentColor"/>
+            <path d="M0,0 Q25,0 25,25 Q25,0 50,0" fill="currentColor" />
           </svg>
           <svg className="absolute bottom-0 left-0 w-24 h-24 text-pink-200/40 -rotate-90" viewBox="0 0 100 100">
-            <path d="M0,0 Q25,0 25,25 Q25,0 50,0" fill="currentColor"/>
+            <path d="M0,0 Q25,0 25,25 Q25,0 50,0" fill="currentColor" />
           </svg>
           <svg className="absolute bottom-0 right-0 w-24 h-24 text-rose-200/40 rotate-180" viewBox="0 0 100 100">
-            <path d="M0,0 Q25,0 25,25 Q25,0 50,0" fill="currentColor"/>
+            <path d="M0,0 Q25,0 25,25 Q25,0 50,0" fill="currentColor" />
           </svg>
 
           <div className="relative px-8 py-12 md:px-16 md:py-16 lg:px-20 lg:py-20">
@@ -230,7 +230,7 @@ const Page = () => {
                   {message.title}
                 </span>
               </h1>
-              
+
               <motion.p
                 className="text-rose-500/80 italic text-lg"
                 initial={{ opacity: 0 }}
@@ -275,13 +275,12 @@ const Page = () => {
                 {message.paragraphs.map((paragraph, index) => (
                   <motion.p
                     key={index}
-                    className={`leading-relaxed ${
-                      index === 0
+                    className={`leading-relaxed ${index === 0
                         ? 'text-rose-700 font-semibold text-xl md:text-3xl'
                         : index === message.paragraphs.length - 1
                           ? 'text-rose-600 font-medium text-right whitespace-pre-line text-xl italic mt-12'
                           : 'text-gray-700 text-lg md:text-xl font-light tracking-wide'
-                    }`}
+                      }`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{
                       opacity: index <= currentParagraph ? 1 : 0,
@@ -339,7 +338,7 @@ const Page = () => {
                       Counting down to
                     </p>
                     <p className="text-4xl md:text-5xl font-bold bg-linear-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                      June 2025
+                      June 2026
                     </p>
                     <p className="text-rose-500 italic">
                       When distance becomes a memory and love becomes tangible
